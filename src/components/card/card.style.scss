@@ -1,0 +1,168 @@
+// "https://image.tmdb.org/t/p/w500/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg"
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+
+.cards-container {
+    //background-color: #d354006c;
+    padding: 10px 10px;
+
+    .card {
+        background-color: #FFF;
+        width: 100%;
+        height: 230px;
+        border-radius: 10px;
+        display: grid;
+        grid-template: 1fr / 150px 1fr;
+        overflow: hidden;
+        margin-top: 10px;
+        box-shadow: 0px 0px 6px 1px rgba(133, 133, 133, 0.623);
+
+        .poster-container {
+            background-color: rgba(0, 128, 0, 0.555);
+            grid-area: 1/1/2/2;
+            overflow: hidden;
+            cursor: pointer;
+
+            .poster {
+                width: 150px;
+                height: 230px;
+                transition: all 1s;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+        .wrap {
+            grid-area: 1/2/2/3;
+            position: relative;
+
+            .card-background {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                min-height: 100%;
+                opacity: 0.3;
+            }
+        }
+
+        .informations {
+            padding: 10px;
+            text-align: left;
+            position: relative;
+
+            .movie-page-link{
+                text-decoration: none;
+                font-family: 'Roboto Condensed', sans-serif;
+                color: #000;
+            }
+
+            .title {
+                margin: 5px auto;
+            }
+
+            .genres {
+                margin: 10px auto;
+                opacity: 0.7;
+                font-size: 12px;
+                font-weight: 600;
+
+                span {
+                    margin: auto 5px;
+                }
+            }
+
+            .rate-container {
+                //background-color: #aa47bc7a;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                .span {
+                    opacity: 0.5;
+                }
+
+                .rate {
+                    font-weight: 700;
+                    font-size: 22px;
+                    margin: auto 5px;
+                }
+
+                a {
+                    display: flex;
+
+                    .imdb-logo {
+                        width: 45px;
+                        margin: auto 5px;
+                    }
+                }
+            }
+
+            .overview {
+                font-family: 'Roboto Condensed', sans-serif;
+                font-weight: 600;
+                width: 90%;
+                margin-top: 20px;
+                opacity: 0.7;
+                overflow-y: auto;
+            }
+        }
+    }
+}
+
+//============================
+@media only screen and (max-width: 1000px) {
+    .cards-container {
+        .card {
+            .informations {
+                .overview {
+                    width: 100%;
+                    margin-top: 5px;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .cards-container {
+        .card {
+            .informations {
+                text-align: center;
+
+                .title {
+                    font-size: 27px;
+                    margin: auto;
+                }
+
+                .genres {
+                    font-weight: 700;
+                }
+
+                .rate-container {
+                    display: initial;
+
+                    .rate {
+                        font-size: 30px;
+                    }
+
+                    a {
+                        margin-top: 10px;
+
+                        .imdb-logo {
+                            width: 70px;
+                            margin: auto;
+                        }
+                    }
+                }
+
+                .overview {
+                    display: none;
+                }
+            }
+        }
+    }
+}
